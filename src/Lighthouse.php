@@ -33,7 +33,7 @@ class Lighthouse
      */
     public function audit($url)
     {
-        $process = new Process($this->getCommand($url));
+        $process = Process::fromShellCommandLine($this->getCommand($url));
 
         $process->setTimeout($this->timeout)->run();
 
